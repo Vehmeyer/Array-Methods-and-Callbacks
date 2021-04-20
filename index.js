@@ -46,7 +46,7 @@ function getFinals(data) {
    return finalStageTeams;
 }
 
-console.log(getFinals(fifaData));
+console.log('task2', getFinals(fifaData));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use the higher-order function called getYears to do the following: 
@@ -55,9 +55,14 @@ Use the higher-order function called getYears to do the following:
 3. Return an array called years containing all of the years in the getFinals data set*/
 
 function getYears(data, getFinalscb) {
-    /* code here */
+    let finalStageTeamsYears = getFinalscb;
+    finalStageTeamsYears = data.map(function(item){
+        return item.Year;
+    })
+    return finalStageTeamsYears;
 }
 
+console.log('task3', getYears(getFinals(fifaData)));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -67,9 +72,16 @@ Use the higher-order function getWinners to do the following:
 3. Determines the winner (home or away) of each `finals` game. 
 4. Returns the names of all winning countries in an array called `winners` */ 
 
-function getWinners(/* code here */) {
-    /* code here */
+function getWinners(data, getFinalscb) {
+    // data.filter(function(item){
+    //     return item['Win Conditions'] ===
+    // })
+
+    // data.map(function(item){
+    //     return item.
+    // })
 }
+
 
 
 
@@ -83,7 +95,7 @@ Use the higher-order function getWinnersByYear to do the following:
 hint: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear(/* code here */) {
+function getWinnersByYear(data, getYearscb, getWinnerscb) {
     /* code here */
 }
 
