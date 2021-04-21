@@ -62,7 +62,7 @@ function getYears(data, getFinalscb) {
     return finalYears;
 }
 
-// console.log(getYears(getFinals(fifaData)));
+// getYears(getFinals(fifaData));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -74,11 +74,11 @@ Use the higher-order function getWinners to do the following:
 
 function getWinners(data, getFinalscb) {
     const winners = [];
-    getFinalscb(data).forEach(function(winner){
-        if (winner["Home Team Goals"] > winner["Away Team Goals"]) {
-            winners.push(winner["Home Team Name"])
+    getFinalscb(data).forEach(function(item){
+        if (item["Home Team Goals"] > item["Away Team Goals"]) {
+            winners.push(item["Home Team Name"])
         } else {
-            winners.push(winner["Away Team Name"])
+            winners.push(item["Away Team Name"])
         }
     });
     return winners;
@@ -121,9 +121,10 @@ Use the higher order function getAverageGoals to do the following:
 */
 
 function getAverageGoals(data, getFinalscb) {
-//    const avgGoals = getFinalscb().reduce.(function(acc, item){
-//        return
-//    },1);
+    const avgGoals = getFinalscb(data);
+    avgGoals.reduce(function(acc, item){
+        return (acc * (item["Home Team Goals"] + item["Away Team Goals"])) / item.MatchID;
+    },1);
 }
 
 
